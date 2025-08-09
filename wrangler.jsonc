@@ -1,0 +1,15 @@
+// wrangler.jsonc
+{
+  "name": "asgweb",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-08-09",
+
+  "assets": { "directory": "agentic-systems-group-site/dist" },
+
+  "routes": [
+    { "pattern": "agenticsystemsgroup.com", "custom_domain": true }
+  ],
+
+  "observability": { "enabled": true }
+}
+
