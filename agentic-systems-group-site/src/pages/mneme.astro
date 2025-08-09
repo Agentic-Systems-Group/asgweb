@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+export const prerender = true;
+const title = "Mneme — Agentic Enterprise Search";
+const description = "Mneme delivers deep research over your private corpora with multi-hop reasoning, structured citations, and auditable traces—no naïve RAG.";
+---
+<BaseLayout {title} {description}>
+  <section class="section">
+    <div class="kicker">Product</div>
+    <h1>Mneme</h1>
+    <p class="lead">
+      Mneme is an <strong>agentic enterprise search</strong> system that performs <strong>deep research</strong> over heterogeneous corpora—PDFs, contracts, memos, emails, spreadsheets, and more—while producing <strong>verifiable, cited answers</strong>. It is not a “chat with your PDFs” toy and it is <em>not</em> naïve RAG.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>What makes Mneme different?</h2>
+    <ul>
+      <li><strong>Multi-hop query planning:</strong> Automatically decomposes complex questions into sub-queries, retrieves relevant passages across sources, and reasons to a final answer.</li>
+      <li><strong>Hybrid retrieval stack:</strong> Layout-aware chunking of long PDFs, BM25 + dense retrieval, and cross-encoder re-ranking to minimize false positives.</li>
+      <li><strong>Structured citations:</strong> Passage-level attributions with page/section anchors; answers <em>must</em> be backed by evidence. When evidence is insufficient, Mneme abstains.</li>
+      <li><strong>Auditable traces:</strong> Deterministic research logs (JSON) capturing retrieval steps, filters, and reasoning summaries for internal review or compliance.</li>
+      <li><strong>Enterprise controls:</strong> Document/row-level access filters, retention policies, and PII-aware redaction options.</li>
+      <li><strong>Low-variance responses:</strong> Guardrails and retrieval-gating reduce hallucination; we prefer “I don’t know without X” to confident fabrications.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Core capabilities</h2>
+    <ul>
+      <li><strong>Heterogeneous corpora:</strong> Contracts, filings, PDFs with tables, slides, spreadsheets, emails, and wikis.</li>
+      <li><strong>Connectors:</strong> File shares, S3, Google Drive, SharePoint, and local folders (watchers for incremental updates).</li>
+      <li><strong>Incremental indexing:</strong> Versioned indexes with background refresh; ingestion pipelines preserve document structure.</li>
+      <li><strong>Answerability score:</strong> Confidence and coverage heuristics with a rationale for why an answer is (un)supported.</li>
+      <li><strong>Export:</strong> Answers + citations + trace as JSON or Markdown for matter files or downstream systems.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Why law firms use Mneme</h2>
+    <ul>
+      <li><strong>Faster first-pass review:</strong> Identify controlling clauses and exceptions across thousands of pages in minutes, not days.</li>
+      <li><strong>Consistent memo drafts:</strong> Evidence-linked paragraphs you can paste into drafts; no scavenger hunts for sources.</li>
+      <li><strong>Explainable internally:</strong> Audit logs you can hand to partners or QA—what was retrieved, what was omitted, and why.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Deployment</h2>
+    <ul>
+      <li><strong>Pay-as-you-use:</strong> Hosted option for trials and small teams.</li>
+      <li><strong>Dedicated deployments:</strong> Private deployments with data residency controls; SSO and per-repo/drive ACL mapping.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Get access</h2>
+    <p>Interested in a pilot? Reach out via <a href="/contact">Contact</a>. We’ll scope a corpus, success metrics, and guardrails before enabling ingestion.</p>
+  </section>
+</BaseLayout>

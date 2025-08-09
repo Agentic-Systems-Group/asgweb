@@ -1,0 +1,47 @@
+---
+const {
+  title = 'Agentic Systems Group',
+  description = 'Research-grade agentic systems. Minimal surface area. Maximum rigor.'
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url?.href ?? ''} />
+    <link rel="stylesheet" href="/styles/base.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/">Agentic Systems Group</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/mneme">Mneme</a>
+        <a href="/research">Research</a>
+        <a href="/civsim">CivSim</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="content" class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div>© {new Date().getFullYear()} Agentic Systems Group</div>
+      <div class="legal">
+        <a href="/legal/privacy">Privacy</a>
+        <span>·</span>
+        <a href="/legal/terms">Terms</a>
+      </div>
+    </footer>
+  </body>
+  </html>

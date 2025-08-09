@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+export const prerender = true;
+const title = "Privacy — Agentic Systems Group";
+const description = "Our approach to privacy and data handling.";
+---
+<BaseLayout {title} {description}>
+  <section class="section">
+    <h1>Privacy</h1>
+    <p class="lead">We minimize data collection and retain only what is necessary for operation and security.</p>
+    <h2>Data we process</h2>
+    <ul>
+      <li>Operational logs for reliability and abuse prevention</li>
+      <li>Support communications you explicitly send us</li>
+    </ul>
+    <h2>Your choices</h2>
+    <ul>
+      <li>Request deletion of support communications</li>
+      <li>Request details about logs associated with your account</li>
+    </ul>
+    <p>Contact <strong>hello@agenticsystems.group</strong> for privacy requests.</p>
+  </section>
+</BaseLayout>

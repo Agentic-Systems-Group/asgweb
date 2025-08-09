@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+export const prerender = true;
+const title = "Research — Agentic Systems Group";
+const description = "Benchmarks and methods for robust agentic behavior, including NuanceBench and long-horizon simulation work (CivSim).";
+---
+<BaseLayout {title} {description}>
+  <section class="section">
+    <div class="kicker">Program</div>
+    <h1>Research</h1>
+    <p class="lead">
+      We study methods and evaluation for robust, verifiable agentic systems. Our emphasis is on <strong>faithful retrieval</strong>, <strong>answerability</strong>, and <strong>long-horizon behavior</strong>.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Focus areas</h2>
+    <ul>
+      <li><strong>NuanceBench:</strong> A benchmark emphasizing edge cases (soft policy boundaries, adversarial requests, and mis-specification) to evaluate real-world agent robustness. (Overview forthcoming.)</li>
+      <li><strong>CivSim:</strong> Long-horizon, multi-agent civic simulation exploring emergent institutions, constraints, and interventions.</li>
+      <li><strong>Retrieval & verification:</strong> Hybrid retrieval, structured evidence, and abstention criteria for enterprise use.</li>
+    </ul>
+  </section>
+</BaseLayout>
