@@ -6,9 +6,7 @@
 
   "assets": { "directory": "agentic-systems-group-site/dist" },
 
-  "routes": [
-    { "pattern": "agenticsystemsgroup.com", "custom_domain": true }
-  ],
+  // Deploy to workers.dev (no routes). Add routes later when the zone is in Cloudflare.
 
   "observability": { "enabled": true }
 }
