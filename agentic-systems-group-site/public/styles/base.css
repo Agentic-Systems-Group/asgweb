@@ -25,6 +25,17 @@ body {
   letter-spacing: 0.01em;
 }
 
+/* subtle film grain overlay; very lightweight */
+body::after {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 2px),
+                    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 2px);
+  mix-blend-mode: overlay;
+  opacity: 0.25;
+}
+
 a { color: var(--fg); text-underline-offset: 2px; }
 a:hover { color: var(--accent); text-decoration: underline; }
 
@@ -67,6 +78,10 @@ h1 {
   font-size: clamp(36px, 6vw, 56px);
   letter-spacing: -0.015em;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Cascadia Code", "JetBrains Mono", "IBM Plex Mono", monospace;
+  background: linear-gradient(180deg, var(--fg), #cfc8b8 60%, var(--fg));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 h2 { font-size: clamp(22px, 3vw, 28px); }
 h3 { font-size: 18px; }
@@ -124,6 +139,22 @@ code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 
 /* Subtle glitch hover for brand and buttons */
 .brand:hover, .button:hover {
   text-shadow: 0 0 1px rgba(217,147,78,0.35), 0.04em 0 rgba(47,90,87,0.2);
+}
+
+/* micro-glitch on brand/links */
+.brand, .button, .nav a {
+  position: relative;
+}
+.brand::before, .button::before {
+  content: attr(data-glitch);
+  position: absolute; left: 0; top: 0;
+  color: var(--accent);
+  opacity: 0; transform: translate(0,0);
+  clip-path: inset(0 0 50% 0);
+  pointer-events: none;
+}
+.brand:hover::before, .button:hover::before {
+  opacity: 0.4; transform: translate(1px,-1px);
 }
 
 /* Focus visibility for a11y on dark backgrounds */
