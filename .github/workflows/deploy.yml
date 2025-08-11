@@ -28,10 +28,20 @@ jobs:
         working-directory: agentic-systems-group-site
         run: npm run build
 
+      - name: Verify build artifacts
+        run: |
+          pwd
+          ls -la
+          ls -la agentic-systems-group-site/dist
+
+      - name: Wrangler version
+        run: npx --yes wrangler --version
+
       - name: Deploy with Wrangler
         uses: cloudflare/wrangler-action@v3
         with:
-          command: wrangler deploy
+          command: wrangler deploy --verbose
+          workingDirectory: .
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

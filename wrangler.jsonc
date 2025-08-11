@@ -2,7 +2,7 @@
 {
   "name": "asgweb",
   "main": "src/worker.js",
-  "compatibility_date": "2025-08-09",
+  "compatibility_date": "2024-08-09",
 
   "assets": { "directory": "agentic-systems-group-site/dist" },
 
