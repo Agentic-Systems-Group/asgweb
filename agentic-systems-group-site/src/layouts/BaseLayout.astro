@@ -1,7 +1,14 @@
 ---
+const navLinks = [
+  { href: "/thothterminal", label: "ThothTerminal" },
+  { href: "/edmneme", label: "EdMneme" },
+  { href: "/research", label: "Research" },
+  { href: "/contact", label: "Contact" }
+];
+
 const {
-  title = 'Agentic Systems Group',
-  description = 'Research-grade agentic systems. Minimal surface area. Maximum rigor.'
+  title = "Agentic Systems Group",
+  description = "Research systems for difficult domains. Local-first, inspectable, and built for real work."
 } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -11,37 +18,57 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0d0f0e" />
+    <meta name="theme-color" content="#f1ece2" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url?.href ?? ''} />
-    <link rel="stylesheet" href="/styles/base.css?v=sg1" />
+    <meta property="og:url" content={Astro.url?.href ?? ""} />
+    <link rel="stylesheet" href="/styles/base.css?v=sg2" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
+
     <header class="site-header">
-      <a class="brand" href="/">Agentic Systems Group</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="/mneme">Mneme</a>
-        <a href="/research">Research</a>
-        <a href="/civsim">CivSim</a>
-        <a href="/contact">Contact</a>
-      </nav>
+      <div class="site-header__inner">
+        <a class="brand-lockup" href="/">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <span class="brand-name">Agentic Systems Group</span>
+            <span class="brand-note">Research systems with inspectable state</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          {navLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      </div>
     </header>
 
-    <main id="content" class="container">
+    <main id="content" class="site-main">
       <slot />
     </main>
 
     <footer class="site-footer">
-      <div>© {new Date().getFullYear()} Agentic Systems Group</div>
-      <div class="legal">
-        <a href="/legal/privacy">Privacy</a>
-        <span>·</span>
-        <a href="/legal/terms">Terms</a>
+      <div class="site-footer__inner">
+        <div>
+          <div class="footer-heading">Agentic Systems Group</div>
+          <p class="footer-copy">
+            Products and research across local-first intelligence systems,
+            tutoring infrastructure, and long-horizon human-LLM interaction.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="/thothterminal">ThothTerminal</a>
+          <a href="/edmneme">EdMneme</a>
+          <a href="/research">Research</a>
+          <a href="/legal/privacy">Privacy</a>
+          <a href="/legal/terms">Terms</a>
+        </div>
       </div>
     </footer>
   </body>
-  </html>
+</html>

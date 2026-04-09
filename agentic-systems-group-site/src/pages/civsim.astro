@@ -1,20 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-export const prerender = true;
-const title = "CivSim — Long-horizon Multi-agent Simulation";
-const description = "CivSim explores emergent civic institutions and constraints via long-horizon, multi-agent simulation.";
----
-<BaseLayout {title} {description}>
-  <section class="section">
-    <div class="kicker">Program</div>
-    <h1 data-glitch="CivSim">CivSim</h1>
-    <p class="lead">
-      Working title for our long-horizon, multi-agent civic simulation. We’re investigating how institutions emerge, how constraints shape behavior, and which interventions actually matter.
-    </p>
-  </section>
 
-  <section class="section">
-    <h2>Status</h2>
-    <p>Active design and prototyping. Updates will be posted on the Research page.</p>
-  </section>
+export const prerender = true;
+
+const title = "CivSim has been folded into current research — Agentic Systems Group";
+const description = "Earlier CivSim framing now lives inside broader research directions including Zeta.";
+---
+
+<BaseLayout {title} {description}>
+  <div class="page-shell">
+    <section class="hero-band redirect-shell">
+      <p class="eyebrow">Archive</p>
+      <h1 class="display display--tight">CivSim is no longer a primary public track.</h1>
+      <p class="redirect-copy">
+        The current site points to the research page and to Zeta for the live simulation-heavy work.
+      </p>
+      <div class="actions">
+        <a class="button" href="/research">Open research</a>
+        <a class="ghost-button" href="/zeta">Open Zeta</a>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

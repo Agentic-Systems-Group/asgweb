@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export const prerender = true;
+
+const title = "Zeta — Agentic Systems Group";
+const description =
+  "Zeta is a preproduction tactics RPG and simulation program built around lawful magic, local LLM companions, and a shared world model.";
+
+const pillars = [
+  {
+    label: "Simulation",
+    title: "Lawful magic over one world model",
+    text:
+      "Magic is treated as a stateful engineering discipline. Spells compile into common state-transform logic so interactions emerge from the laws instead of bespoke pair scripting."
+  },
+  {
+    label: "Agency",
+    title: "LLM-first party design",
+    text:
+      "The design target is mixed human and model parties where local LLM companions act through structured intents under the same authoritative rules as everyone else."
+  },
+  {
+    label: "Combat",
+    title: "Close-range mage play",
+    text:
+      "The roadmap rejects artillery-only spellcasting. Posture, disruption, footing, visibility, and medium control are meant to matter as much as raw output."
+  },
+  {
+    label: "Progression",
+    title: "Mastery over grind",
+    text:
+      "Advancement is supposed to follow evidence of learning and adaptation, with anti-grind logic preventing trivial repetition from becoming the optimal path."
+  }
+];
+
+const roadmap = [
+  "Phase 0 foundations: schemas, operators, spell compiler skeletons, and debug visualizations.",
+  "Phase 1 state sandbox: temperature, moisture, pressure, charge, opacity, structural integrity, momentum, and biological stress.",
+  "Phase 2 spell runtime: benchmark spells such as Cinder Line, Vapor Mantle, and Aegis Frame.",
+  "Phase 3 duel prototype: prove disruption, positioning, and close-range viability.",
+  "Phase 5 local companion: one useful, bounded local LLM party member."
+];
+---
+
+<BaseLayout {title} {description}>
+  <div class="page-shell">
+    <section class="hero-band">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Research program</p>
+          <h1 class="display display--tight">Zeta</h1>
+          <p class="lede">
+            Zeta is a preproduction tactics RPG and simulation program built around lawful magic,
+            local LLM companions, and one rule-bound world model for humans, models, and deterministic agents.
+          </p>
+          <div class="actions">
+            <a class="button" href="/research">Back to research</a>
+            <a class="ghost-button" href="/contact">Discuss the program</a>
+          </div>
+        </div>
+
+        <aside class="hero-notes" aria-label="Zeta summary">
+          <ul class="summary-list">
+            <li>
+              <span class="meta-label">Status</span>
+              <strong>Preproduction / codename</strong>
+              <p>The repo materials position this clearly as an active design program, not a launch-ready product.</p>
+            </li>
+            <li>
+              <span class="meta-label">Thesis</span>
+              <strong>Prototype the laws before the content</strong>
+              <p>The goal is to prove the simulation, then scale the world.</p>
+            </li>
+            <li>
+              <span class="meta-label">Differentiator</span>
+              <strong>Shared human-LLM world model</strong>
+              <p>Companions and players operate through the same rules instead of separate narrative wrappers.</p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Core pillars</p>
+          <h2 class="section-title">What makes Zeta distinct.</h2>
+        </div>
+        <p class="section-copy">
+          Zeta matters on the site because it shows the longer arc of the company’s interests:
+          not just models that answer questions, but systems where humans and model agents share a bounded world.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        {pillars.map((item) => (
+          <article class="feature">
+            <span class="feature-label">{item.label}</span>
+            <h3>{item.title}</h3>
+            <p class="feature-text">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Prototype roadmap</p>
+          <h2 class="section-title">Current build order.</h2>
+        </div>
+        <p class="section-copy">
+          The roadmap is explicit about sequencing: build the simulation substrate, validate the spell laws,
+          prove close-range combat, and only then widen the content surface.
+        </p>
+      </div>
+
+      <ul class="timeline-list">
+        {roadmap.map((item) => (
+          <li>
+            <p>{item}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,21 +1,72 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-export const prerender = true;
-const title = "Contact — Agentic Systems Group";
-const description = "Reach out for pilots, research collaborations, and dedicated deployments.";
----
-<BaseLayout {title} {description}>
-  <section class="section">
-    <div class="kicker">Contact</div>
-    <h1 data-glitch="Get in touch">Get in touch</h1>
-    <p class="lead">For pilots, dedicated deployments, or research collaborations, email us:</p>
-    <p><strong>hello@agenticsystems.group</strong> <!-- TODO: replace with actual address --></p>
 
-    <h2>What helps us help you</h2>
-    <ul>
-      <li>Brief description of your corpus (volume, formats, sensitivity)</li>
-      <li>Primary workflows (e.g., contract review, due diligence, discovery)</li>
-      <li>Success metrics and constraints (speed, accuracy, auditability)</li>
-    </ul>
-  </section>
+export const prerender = true;
+
+const title = "Contact — Agentic Systems Group";
+const description =
+  "Reach out about ThothTerminal, EdMneme, research collaborations, or custom deployments.";
+---
+
+<BaseLayout {title} {description}>
+  <div class="page-shell">
+    <section class="hero-band">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h1 class="display display--tight">Tell us what problem the system has to survive.</h1>
+          <p class="lede">
+            The best conversations start with the real constraints: the corpus, the workflow,
+            the operator, and the failure modes you cannot tolerate.
+          </p>
+          <div class="actions">
+            <a class="contact-email" href="mailto:hello@agenticsystems.group">hello@agenticsystems.group</a>
+          </div>
+        </div>
+
+        <aside class="hero-notes" aria-label="Inquiry types">
+          <ul class="summary-list">
+            <li>
+              <span class="meta-label">Product inquiries</span>
+              <strong>ThothTerminal or EdMneme</strong>
+              <p>Pilots, product fit, dedicated deployments, or integration discussions.</p>
+            </li>
+            <li>
+              <span class="meta-label">Research inquiries</span>
+              <strong>Collaborations and prototypes</strong>
+              <p>Institutional intelligence, tutoring systems, or longer-horizon shared-agent work.</p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Useful context</p>
+          <h2 class="section-title">What helps us respond quickly.</h2>
+        </div>
+        <p class="section-copy">
+          We do better with a concrete problem statement than with vague interest. If you already
+          know the workflow, data surface, or evaluation bar, include it.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <article class="contact-card">
+          <h3>For ThothTerminal</h3>
+          <p>Describe the source mix, cadence, and the research outputs you need to trust.</p>
+        </article>
+        <article class="contact-card">
+          <h3>For EdMneme</h3>
+          <p>Describe the learning workflow, the teaching material, and where tool use or textbook ingestion matters.</p>
+        </article>
+        <article class="contact-card">
+          <h3>For research</h3>
+          <p>Describe the problem, the evaluation target, and whether you want a prototype, collaboration, or deployment path.</p>
+        </article>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

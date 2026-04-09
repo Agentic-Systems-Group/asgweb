@@ -1,24 +1,124 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-export const prerender = true;
-const title = "Research — Agentic Systems Group";
-const description = "Benchmarks and methods for robust agentic behavior, including NuanceBench and long-horizon simulation work (CivSim).";
----
-<BaseLayout {title} {description}>
-  <section class="section">
-    <div class="kicker">Program</div>
-    <h1 data-glitch="Research">Research</h1>
-    <p class="lead">
-      We study methods and evaluation for robust, verifiable agentic systems. Our emphasis is on <strong>faithful retrieval</strong>, <strong>answerability</strong>, and <strong>long-horizon behavior</strong>.
-    </p>
-  </section>
 
-  <section class="section">
-    <h2>Focus areas</h2>
-    <ul>
-      <li><strong>NuanceBench:</strong> A benchmark emphasizing edge cases (soft policy boundaries, adversarial requests, and mis-specification) to evaluate real-world agent robustness. (Overview forthcoming.)</li>
-      <li><strong>CivSim:</strong> Long-horizon, multi-agent civic simulation exploring emergent institutions, constraints, and interventions.</li>
-      <li><strong>Retrieval & verification:</strong> Hybrid retrieval, structured evidence, and abstention criteria for enterprise use.</li>
-    </ul>
-  </section>
+export const prerender = true;
+
+const title = "Research — Agentic Systems Group";
+const description =
+  "Current research at Agentic Systems Group emphasizes report-centric intelligence systems and Zeta.";
+
+const programs = [
+  {
+    name: "Research reports inside ThothTerminal",
+    label: "Applied research infrastructure",
+    status: "Implemented slice",
+    summary:
+      "The report roadmap turns ThothTerminal into a research engine where deterministic, versioned reports become the canonical surface for companies and concepts.",
+    detail:
+      "That means subject resolution, published primers and teardowns, freshness review, export history, and shared browser, MCP, and ChatGPT-app surfaces."
+  },
+  {
+    name: "Institutional intelligence operating system",
+    label: "Long-horizon operating blueprint",
+    status: "Active direction",
+    summary:
+      "The target state described in the roadmaps is not a nicer dashboard but an institutional intelligence system that can build and refresh investment-grade views of companies, programs, products, and bottlenecks.",
+    detail:
+      "This is the deeper research framing beneath the current ThothTerminal work: richer datasets, better subject modeling, and more explicit operational loops."
+  },
+  {
+    name: "Zeta",
+    label: "Simulation program",
+    status: "Preproduction",
+    summary:
+      "Zeta is a tactics RPG and simulation project built around lawful magic, close-range mage combat, mastery over grind, and local LLM companions that act through the same world model.",
+    detail:
+      "The current prototype doctrine is explicit: prove the laws before scaling content volume, and make the simulation readable enough that players understand why outcomes happened."
+  }
+];
+---
+
+<BaseLayout {title} {description}>
+  <div class="page-shell">
+    <section class="hero-band">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Research</p>
+          <h1 class="display display--tight">Memory, control, and shared human-LLM worlds.</h1>
+          <p class="lede">
+            Research here is practical. Some of it becomes product architecture, some becomes
+            operational doctrine, and some becomes longer-horizon design work that tests how humans
+            and model agents can meaningfully share tools, goals, and state.
+          </p>
+        </div>
+
+        <aside class="hero-notes" aria-label="Research posture">
+          <ul class="summary-list">
+            <li>
+              <span class="meta-label">Current posture</span>
+              <strong>Applied first</strong>
+              <p>Research is expected to change the product surface, not sit next to it as a separate identity project.</p>
+            </li>
+            <li>
+              <span class="meta-label">Core concerns</span>
+              <strong>Memory, control, evaluation</strong>
+              <p>We care about whether systems stay useful, grounded, and legible as they become more agentic.</p>
+            </li>
+            <li>
+              <span class="meta-label">Current blend</span>
+              <strong>Infrastructure plus exploration</strong>
+              <p>The portfolio spans concrete research infrastructure and deeper exploratory programs such as Zeta.</p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Programs</p>
+          <h2 class="section-title">Current research programs.</h2>
+        </div>
+        <p class="section-copy">
+          These tracks are at different levels of maturity, but they all reflect the same question:
+          how do you build systems that can reason, act, and remain accountable?
+        </p>
+      </div>
+
+      <div class="system-list">
+        {programs.map((program) => (
+          <article class="system-row">
+            <div>
+              <p class="kicker">{program.label}</p>
+            </div>
+            <div>
+              <h3 class="system-row__title">{program.name}</h3>
+              <p class="system-row__summary">{program.summary}</p>
+              <p class="system-row__summary">{program.detail}</p>
+            </div>
+            <div class="system-row__meta">
+              <span class="stat-chip">{program.status}</span>
+              {program.name === "Zeta" ? <a class="system-link" href="/zeta">Open</a> : <a class="system-link" href="/contact">Discuss</a>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Why this matters</p>
+          <h2 class="section-title">The products are downstream of the research.</h2>
+        </div>
+        <p class="section-copy">
+          The report work inside ThothTerminal turns research into a durable surface instead of
+          scattered notes. The institutional-intelligence direction asks what happens when that surface
+          becomes continuously maintained. Zeta tests what it means for humans and model agents to
+          share a rule-bound world rather than merely exchange text.
+        </p>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

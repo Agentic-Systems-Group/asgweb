@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+export const prerender = true;
+
+const title = "ThothTerminal — Agentic Systems Group";
+const description =
+  "ThothTerminal is a local-first research terminal for heterogeneous sources, research reports, companies, earnings, supply chains, and MCP-enabled workflows.";
+
+const surfaces = [
+  {
+    label: "Core system",
+    title: "One canonical research store",
+    text:
+      "ThothTerminal centers the work on a canonical SQLite system of record rather than on scattered caches, duplicate databases, or prompt-only memory."
+  },
+  {
+    label: "Operator surface",
+    title: "Web, desktop, MCP, and Discord",
+    text:
+      "The same research system is exposed through the browser, a desktop shell, MCP tools, exports, and optional Discord workflows instead of fragmenting into unrelated interfaces."
+  },
+  {
+    label: "Domain coverage",
+    title: "Companies, earnings, transcripts, supply chains",
+    text:
+      "The current UI includes company pages, earnings views, transcript lookup, currency normalization, datasets, and supply-chain graph work."
+  },
+  {
+    label: "Research output",
+    title: "Report-grade exports",
+    text:
+      "The roadmap increasingly treats the research report as the canonical output surface, with versioned reports, knowledge assets, export history, and freshness review."
+  }
+];
+
+const doctrine = [
+  {
+    label: "Local-first",
+    title: "Cheap enough to stay on",
+    text:
+      "The design bias is toward a serious always-on terminal with bounded polling, explicit schemas, and low idle cost rather than heavyweight infrastructure."
+  },
+  {
+    label: "Deterministic rails",
+    title: "Shared business logic over forks",
+    text:
+      "Web, desktop, automation, and MCP surfaces are supposed to reuse the same logic and data contracts, so the system does not drift by interface."
+  },
+  {
+    label: "Institutional direction",
+    title: "More than a dashboard",
+    text:
+      "The long-term target described in the roadmap is an institutional intelligence system that can build and continuously refresh investment-grade views of companies, programs, and bottlenecks."
+  }
+];
+---
+
+<BaseLayout {title} {description}>
+  <div class="page-shell">
+    <section class="hero-band">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Active system</p>
+          <h1 class="display display--tight">ThothTerminal</h1>
+          <p class="lede">
+            A local-first research terminal for heterogeneous sources, canonical storage, structured
+            analysis, and report-grade outputs. Thoth is built for people who need companies,
+            supply chains, transcripts, and research artifacts to stay coherent as the corpus grows.
+          </p>
+          <div class="actions">
+            <a class="button" href="/contact">Discuss ThothTerminal</a>
+            <a class="ghost-button" href="/research">See related research</a>
+          </div>
+        </div>
+
+        <aside class="hero-notes" aria-label="ThothTerminal summary">
+          <ul class="summary-list">
+            <li>
+              <span class="meta-label">Status</span>
+              <strong>Actively built</strong>
+              <p>Concrete surface area today across ingestion, research, and export workflows.</p>
+            </li>
+            <li>
+              <span class="meta-label">Current surfaces</span>
+              <strong>Web, desktop, MCP, Discord</strong>
+              <p>The product identity is the shared core, not a single interface shell.</p>
+            </li>
+            <li>
+              <span class="meta-label">Focus</span>
+              <strong>Institutional research</strong>
+              <p>Companies, earnings, transcripts, datasets, reports, and supply-chain intelligence.</p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Current surface</p>
+          <h2 class="section-title">What ThothTerminal is already doing.</h2>
+        </div>
+        <p class="section-copy">
+          The product has moved well past a generic research dashboard. The repo now points to a
+          deliberately structured terminal with ingestion, triage, transcripts, earnings, report work,
+          and MCP exposure as part of one system.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        {surfaces.map((item) => (
+          <article class="feature">
+            <span class="feature-label">{item.label}</span>
+            <h3>{item.title}</h3>
+            <p class="feature-text">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Build doctrine</p>
+          <h2 class="section-title">Why the architecture matters.</h2>
+        </div>
+        <p class="section-copy">
+          The strongest part of the ThothTerminal materials is not a slogan but the operating doctrine:
+          one durable core, structured state, headless workflows where possible, and research outputs
+          that can be audited instead of merely admired.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        {doctrine.map((item) => (
+          <article class="feature">
+            <span class="feature-label">{item.label}</span>
+            <h3>{item.title}</h3>
+            <p class="feature-text">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

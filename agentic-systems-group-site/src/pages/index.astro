@@ -1,34 +1,201 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-export const prerender = true;
-const title = "Agentic Systems Group — agentic systems that think and verify";
-const description = "We build research-grade agentic systems for enterprises. Mneme delivers deep research on your private corpora without naive RAG.";
----
-<BaseLayout {title} {description}>
-  <section class="hero">
-    <h1 data-glitch="Agentic Systems Group">Agentic Systems Group</h1>
-    <p class="tagline">Research-grade agentic systems. Minimal surface area. Maximum rigor.</p>
-    <div class="cta">
-      <a class="button" href="/mneme">Explore Mneme</a>
-      <a class="link" href="/research">Research</a>
-    </div>
-  </section>
 
-  <section class="grid">
-    <div class="card">
-      <h2>Mneme</h2>
-      <p>Enterprise agentic search—beyond naïve RAG. Multi-hop reasoning over files and structured citations designed for legal, finance, and consulting workflows.</p>
-      <a href="/mneme">Learn more →</a>
-    </div>
-    <div class="card">
-      <h2>Research</h2>
-      <p>Benchmarks and methods for robust agentic behavior—including NuanceBench and long-horizon simulation work.</p>
-      <a href="/research">See research →</a>
-    </div>
-    <div class="card">
-      <h2>CivSim</h2>
-      <p>Long-horizon, multi-agent civic simulation exploring emergent institutions and constraints. Working title; in active design.</p>
-      <a href="/civsim">Preview →</a>
-    </div>
-  </section>
+export const prerender = true;
+
+const title = "Agentic Systems Group — research systems that stay legible under pressure";
+const description =
+  "Agentic Systems Group builds ThothTerminal, EdMneme, and long-horizon research programs around tutoring, institutional intelligence, and shared human-LLM systems.";
+
+const systems = [
+  {
+    name: "ThothTerminal",
+    label: "Local-first research terminal",
+    href: "/thothterminal",
+    summary:
+      "A serious always-on research terminal for heterogeneous sources, canonical storage, companies, earnings, transcripts, supply chains, and report-grade outputs.",
+    status: "Active system",
+    meta: "Web, desktop, MCP, Discord"
+  },
+  {
+    name: "EdMneme",
+    label: "Tutoring and control room",
+    href: "/edmneme",
+    summary:
+      "An interactive tutoring stack with a Control Room UI, inference routing, project memory, tool orchestration, and textbook ingestion through remote OCR.",
+    status: "Active system",
+    meta: "Tutoring, OCR, project memory"
+  },
+  {
+    name: "Research",
+    label: "Long-horizon programs",
+    href: "/research",
+    summary:
+      "Current research directions now emphasize report-centric intelligence systems and Zeta, a simulation-heavy tactics RPG exploring lawful magic and local LLM companions.",
+    status: "Ongoing programs",
+    meta: "Simulation, evaluation, systems"
+  }
+];
+
+const principles = [
+  {
+    title: "Inspectable over theatrical",
+    body:
+      "We prefer systems that can show their evidence, expose their state, and survive scrutiny from operators who care about what the model actually did."
+  },
+  {
+    title: "One durable core",
+    body:
+      "The strongest product decisions in the current stack all push toward a shared system of record instead of fragile sidecars, duplicate stores, or prompt-shaped state."
+  },
+  {
+    title: "Research feeds product",
+    body:
+      "The long-horizon programs are not decorative R&D. They shape how we think about agency, control, evaluation, and human-machine collaboration."
+  }
+];
+
+const researchTracks = [
+  {
+    title: "Report-centric intelligence",
+    body:
+      "Inside ThothTerminal, research reports are becoming the canonical export surface for companies, technologies, components, and themes."
+  },
+  {
+    title: "Institutional intelligence",
+    body:
+      "The longer roadmap pushes beyond dashboards toward continuously refreshed, evidence-dense views of companies, programs, products, and bottlenecks."
+  },
+  {
+    title: "Zeta",
+    body:
+      "A preproduction tactics RPG and simulation project built around lawful magic, local-model companions, and one world model for humans and agents."
+  }
+];
+---
+
+<BaseLayout {title} {description}>
+  <div class="page-shell">
+    <section class="hero-band">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Agentic Systems Group</p>
+          <h1 class="display">Systems for research, learning, and long-horizon agency.</h1>
+          <p class="lede">
+            We build research systems for difficult domains: local-first terminals,
+            tutoring infrastructure, and experiments in human-LLM cooperation where
+            evidence, tools, and inspectable state matter more than presentation-layer magic.
+          </p>
+          <div class="actions">
+            <a class="button" href="/thothterminal">View ThothTerminal</a>
+            <a class="ghost-button" href="/edmneme">View EdMneme</a>
+            <a class="ghost-button" href="/research">See Research</a>
+          </div>
+        </div>
+
+        <aside class="hero-notes" aria-label="Current focus">
+          <ul class="summary-list">
+            <li>
+              <span class="meta-label">Current focus</span>
+              <strong>ThothTerminal and EdMneme</strong>
+              <p>The products with the most concrete surface area today.</p>
+            </li>
+            <li>
+              <span class="meta-label">Research cadence</span>
+              <strong>Applied, not ornamental</strong>
+              <p>Longer-horizon work is expected to shape the product surface, not sit beside it as mood.</p>
+            </li>
+            <li>
+              <span class="meta-label">Operating preference</span>
+              <strong>Local-first whenever possible</strong>
+              <p>We bias toward systems you can inspect, recover, and extend without blind dependencies.</p>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="current-systems">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Current systems</p>
+          <h2 class="section-title" id="current-systems">What is live now.</h2>
+        </div>
+        <p class="section-copy">
+          The company site should reflect the actual work in the repos, not a frozen
+          snapshot of an earlier pitch. These are the systems and programs that currently define the work.
+        </p>
+      </div>
+
+      <div class="system-list">
+        {systems.map((system) => (
+          <article class="system-row">
+            <div>
+              <p class="kicker">{system.label}</p>
+            </div>
+            <div>
+              <h3 class="system-row__title">{system.name}</h3>
+              <p class="system-row__summary">{system.summary}</p>
+            </div>
+            <div class="system-row__meta">
+              <span class="stat-chip">{system.status}</span>
+              <a class="system-link" href={system.href}>Open</a>
+              <span class="meta-label">{system.meta}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="principles">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Approach</p>
+          <h2 class="section-title" id="principles">How we build.</h2>
+        </div>
+        <p class="section-copy">
+          We do not want the company site to promise one thing while the codebase reveals another.
+          The work is technical, structured, and opinionated, so the site now reflects that directly.
+        </p>
+      </div>
+
+      <div class="principle-grid">
+        {principles.map((principle) => (
+          <article class="principle">
+            <h3>{principle.title}</h3>
+            <p>{principle.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="research-directions">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Research directions</p>
+          <h2 class="section-title" id="research-directions">Where the deeper work is going.</h2>
+        </div>
+        <p class="section-copy">
+          The product line is anchored in concrete systems, but the surrounding research matters:
+          how to structure long-form research memory, how to think about institutional intelligence,
+          and how humans and model agents can meaningfully share a bounded world.
+        </p>
+      </div>
+
+      <ul class="timeline-list">
+        {researchTracks.map((track) => (
+          <li>
+            <strong>{track.title}</strong>
+            <p>{track.body}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <blockquote class="pull-quote">
+        We are more interested in systems that can defend their outputs than in systems that merely look fluent.
+      </blockquote>
+    </section>
+  </div>
 </BaseLayout>

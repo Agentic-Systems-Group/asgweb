@@ -1,23 +1,47 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
 export const prerender = true;
+
 const title = "Privacy — Agentic Systems Group";
 const description = "Our approach to privacy and data handling.";
 ---
+
 <BaseLayout {title} {description}>
-  <section class="section">
-    <h1 data-glitch="Privacy">Privacy</h1>
-    <p class="lead">We minimize data collection and retain only what is necessary for operation and security.</p>
-    <h2>Data we process</h2>
-    <ul>
-      <li>Operational logs for reliability and abuse prevention</li>
-      <li>Support communications you explicitly send us</li>
-    </ul>
-    <h2>Your choices</h2>
-    <ul>
-      <li>Request deletion of support communications</li>
-      <li>Request details about logs associated with your account</li>
-    </ul>
-    <p>Contact <strong>hello@agenticsystems.group</strong> for privacy requests.</p>
-  </section>
+  <div class="page-shell">
+    <section class="hero-band redirect-shell">
+      <p class="eyebrow">Privacy</p>
+      <h1 class="display display--tight">Privacy</h1>
+      <p class="lede">
+        We minimize data collection and retain only what is necessary for operation and security.
+      </p>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Data</p>
+          <h2 class="section-title">What we process.</h2>
+        </div>
+        <div>
+          <p class="section-copy">Operational logs for reliability and abuse prevention.</p>
+          <p class="section-copy">Support communications you explicitly send us.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Choices</p>
+          <h2 class="section-title">What you can request.</h2>
+        </div>
+        <div>
+          <p class="section-copy">Deletion of support communications you sent us.</p>
+          <p class="section-copy">Details about logs associated with your account, where applicable.</p>
+          <p class="section-copy">Contact <strong>hello@agenticsystems.group</strong> for privacy requests.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
