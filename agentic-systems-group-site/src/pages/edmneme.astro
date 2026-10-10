@@ -1,146 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 export const prerender = true;
-
-const title = "EdMneme — Agentic Systems Group";
-const description =
-  "EdMneme is an interactive tutoring stack with a Control Room UI, inference routing, MCP tool orchestration, project memory, and textbook ingestion.";
-
-const capabilities = [
-  {
-    label: "Learning surface",
-    title: "Control Room UI",
-    text:
-      "EdMneme exposes tutoring sessions, project state, tool activity, and infrastructure health through a concrete control-room interface rather than a thin chat wrapper."
-  },
-  {
-    label: "Model orchestration",
-    title: "Inference routing and fallbacks",
-    text:
-      "The stack routes across SGLang and Prime/OpenAI-compatible endpoints, keeping tool use and tutoring workflows inside one controllable runtime."
-  },
-  {
-    label: "Tool use",
-    title: "MCP bridge plus guarded local actions",
-    text:
-      "The agent loop validates tool calls through an MCP catalog and dispatches them through local bridges for filesystem, memory, search, vector, verification, and Python execution."
-  },
-  {
-    label: "Learning inputs",
-    title: "Textbook ingestion and project memory",
-    text:
-      "Remote DeepSeek OCR, chunking, dashboards, and a lightweight knowledge graph give the system a more serious learning substrate than raw chat history."
-  }
-];
-
-const workflow = [
-  {
-    label: "Tutoring",
-    title: "Projects, sessions, and prerequisite structure",
-    text:
-      "EdMneme stores projects and sessions with scoped memory so learning can build over time instead of restarting every conversation."
-  },
-  {
-    label: "Operations",
-    title: "Prime launch and SGLang visibility",
-    text:
-      "The current interface already surfaces Prime offer flows, health checks, streaming logs, and infrastructure state alongside the tutoring surface."
-  },
-  {
-    label: "Education system",
-    title: "More than chat with a textbook",
-    text:
-      "The product direction is an interactive tutoring system with tool access, structured project state, and deliberate ingestion paths for course material."
-  }
-];
+const title = "EdMneme — tutoring and project memory";
+const description = "EdMneme is an interactive tutoring and project-memory system with a control room, inference routing, tool orchestration, and remote OCR.";
 ---
-
 <BaseLayout {title} {description}>
   <div class="page-shell">
-    <section class="hero-band">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Active system</p>
-          <h1 class="display display--tight">EdMneme</h1>
-          <p class="lede">
-            An interactive tutoring stack with a Control Room UI, tool orchestration, project memory,
-            and textbook ingestion. EdMneme is the educational system now represented on the site in
-            place of the older Mneme framing.
-          </p>
-          <div class="actions">
-            <a class="button" href="/contact">Discuss EdMneme</a>
-            <a class="ghost-button" href="/mneme">View the archived Mneme note</a>
-          </div>
-        </div>
+  <section class="section">
+    <div class="kicker">Product</div>
+    <h1>EdMneme</h1>
+    <p class="lead">
+      An interactive tutoring workspace for long-running learning projects—combining model routing, durable memory, textbook ingestion, and visible tool state in one control room.
+    </p>
+  </section>
 
-        <aside class="hero-notes" aria-label="EdMneme summary">
-          <ul class="summary-list">
-            <li>
-              <span class="meta-label">Status</span>
-              <strong>Actively built</strong>
-              <p>Control room, routing, project state, and ingestion already exist in the current repo.</p>
-            </li>
-            <li>
-              <span class="meta-label">Surface</span>
-              <strong>Tutor plus control room</strong>
-              <p>The system treats learning, tools, and ops as one coordinated workflow.</p>
-            </li>
-            <li>
-              <span class="meta-label">Focus</span>
-              <strong>Structured learning workflows</strong>
-              <p>Projects, sessions, knowledge graphs, OCR, and tool-mediated tutoring.</p>
-            </li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+  <section class="section">
+    <h2>What it brings together</h2>
+    <ul>
+      <li><strong>Control room:</strong> Inspect projects, active sessions, model routing, and tool state without hiding the working process.</li>
+      <li><strong>Durable project memory:</strong> Preserve learning goals, prior work, source context, and open questions across sessions.</li>
+      <li><strong>Textbook ingestion:</strong> Bring long-form learning material into the workspace through document processing and remote OCR.</li>
+      <li><strong>Inference routing:</strong> Match work to available local or remote models while keeping the operator in control.</li>
+      <li><strong>Tool orchestration:</strong> Let tutoring sessions use bounded tools and visible project state instead of relying on one oversized prompt.</li>
+    </ul>
+  </section>
 
-    <section class="section-block">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Current system</p>
-          <h2 class="section-title">What EdMneme includes today.</h2>
-        </div>
-        <p class="section-copy">
-          The current repository is not a simple tutor prompt wrapped in a UI. It already includes
-          routing, tool orchestration, infrastructure hooks, textbook ingestion, and project-scoped state.
-        </p>
-      </div>
+  <section class="section">
+    <h2>Current status</h2>
+    <p>EdMneme is under development and is not available for public download.</p>
+  </section>
 
-      <div class="feature-grid">
-        {capabilities.map((item) => (
-          <article class="feature">
-            <span class="feature-label">{item.label}</span>
-            <h3>{item.title}</h3>
-            <p class="feature-text">{item.text}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Why it matters</p>
-          <h2 class="section-title">A tutoring system needs operational depth.</h2>
-        </div>
-        <p class="section-copy">
-          The distinction here is that EdMneme is being built as a real learning system with state,
-          tools, ingestion, and infrastructure visibility. That gives it a more defensible identity than
-          generic “AI tutor” positioning.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        {workflow.map((item) => (
-          <article class="feature">
-            <span class="feature-label">{item.label}</span>
-            <h3>{item.title}</h3>
-            <p class="feature-text">{item.text}</p>
-          </article>
-        ))}
-      </div>
-    </section>
+  <section class="section">
+    <h2>Get access</h2>
+    <p>Interested in the tutoring stack or a research collaboration? Reach out via <a href="/contact">Contact</a>.</p>
+  </section>
   </div>
 </BaseLayout>

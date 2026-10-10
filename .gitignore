@@ -1,0 +1,9 @@
+.tmp/
+.wrangler/
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+node_modules/
+dist/
+.astro/

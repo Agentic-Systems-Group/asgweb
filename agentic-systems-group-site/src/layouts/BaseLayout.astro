@@ -1,15 +1,17 @@
 ---
-const navLinks = [
-  { href: "/thothterminal", label: "ThothTerminal" },
-  { href: "/edmneme", label: "EdMneme" },
-  { href: "/research", label: "Research" },
-  { href: "/contact", label: "Contact" }
-];
-
+const sourceUrl = 'https://github.com/HumanDotPy/ThothTerminal';
 const {
-  title = "Agentic Systems Group",
-  description = "Research systems for difficult domains. Local-first, inspectable, and built for real work."
+  title = 'Agentic Systems Group',
+  description = 'We build inspectable agentic systems for research, memory, and long-horizon reasoning.'
 } = Astro.props;
+const pathname = Astro.url.pathname;
+const navItems = [
+  { href: '/thoth', label: 'Thoth' },
+  { href: '/edmneme', label: 'EdMneme' },
+  { href: '/research', label: 'Research' },
+  { href: '/contact', label: 'Contact' },
+  { href: sourceUrl, label: 'Source', external: true },
+];
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -18,57 +20,47 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f1ece2" />
+    <meta name="theme-color" content="#000000" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url?.href ?? ""} />
-    <link rel="stylesheet" href="/styles/base.css?v=sg2" />
+    <meta property="og:url" content={Astro.url?.href ?? ''} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/styles/base.css" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
-
     <header class="site-header">
-      <div class="site-header__inner">
-        <a class="brand-lockup" href="/">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-text">
-            <span class="brand-name">Agentic Systems Group</span>
-            <span class="brand-note">Research systems with inspectable state</span>
-          </span>
-        </a>
-
-        <nav class="nav" aria-label="Primary">
-          {navLinks.map((link) => (
-            <a href={link.href}>{link.label}</a>
-          ))}
-        </nav>
-      </div>
+      <a class="brand" href="/" aria-label="Agentic Systems Group home">
+        <span class="brand-mark" aria-hidden="true">ASG</span>
+        <span class="brand-name">Agentic Systems Group</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            aria-current={pathname === item.href ? 'page' : undefined}
+            {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >{item.label}</a>
+        ))}
+      </nav>
     </header>
 
-    <main id="content" class="site-main">
+    <main id="content">
       <slot />
     </main>
 
     <footer class="site-footer">
-      <div class="site-footer__inner">
-        <div>
-          <div class="footer-heading">Agentic Systems Group</div>
-          <p class="footer-copy">
-            Products and research across local-first intelligence systems,
-            tutoring infrastructure, and long-horizon human-LLM interaction.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <a href="/thothterminal">ThothTerminal</a>
-          <a href="/edmneme">EdMneme</a>
-          <a href="/research">Research</a>
-          <a href="/legal/privacy">Privacy</a>
-          <a href="/legal/terms">Terms</a>
-        </div>
+      <div class="footer-col">
+        <div class="footer-brand">Agentic Systems Group <span>© {new Date().getFullYear()}</span></div>
+        <p>Independent work by <a href="https://github.com/HumanDotPy" target="_blank" rel="noopener noreferrer">HumanDotPy</a>.</p>
+      </div>
+      <div class="legal">
+        <a href={sourceUrl} target="_blank" rel="noopener noreferrer">Source</a>
+        <a href="/legal/privacy">Privacy</a>
+        <a href="/legal/terms">Terms</a>
       </div>
     </footer>
   </body>
-</html>
+  </html>

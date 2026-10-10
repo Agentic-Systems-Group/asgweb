@@ -6,12 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "lint": "echo \"(optional) add eslint later\""
+    "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.14.0",
-    "@astrojs/sitemap": "^3.1.3"
+    "astro": "^7.1.6",
+    "@astrojs/sitemap": "^3.7.3"
   },
   "devDependencies": {
     "typescript": "^5.4.0"

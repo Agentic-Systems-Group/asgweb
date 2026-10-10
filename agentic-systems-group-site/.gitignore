@@ -4,6 +4,9 @@ node_modules/
 # production
 dist/
 .cache/
+.astro/
+.playwright-cli/
+output/
 
 # logs
 npm-debug.log*

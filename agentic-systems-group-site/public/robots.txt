@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.agenticsystems.group/sitemap-index.xml
+Sitemap: https://agenticsystemsgroup.com/sitemap-index.xml

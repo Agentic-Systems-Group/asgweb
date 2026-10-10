@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.agenticsystems.group', // TODO: replace with canonical domain
+  site: 'https://agenticsystemsgroup.com',
   integrations: [sitemap()],
   output: 'static'
 });

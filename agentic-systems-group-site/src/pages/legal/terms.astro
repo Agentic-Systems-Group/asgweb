@@ -1,21 +1,15 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 export const prerender = true;
-
 const title = "Terms — Agentic Systems Group";
 const description = "Use terms for the website.";
 ---
-
 <BaseLayout {title} {description}>
-  <div class="page-shell">
-    <section class="hero-band redirect-shell">
-      <p class="eyebrow">Terms</p>
-      <h1 class="display display--tight">Terms</h1>
-      <p class="lede">
-        By using this website, you agree to reasonable use and no abuse of any interactive elements provided.
-      </p>
-      <p class="redirect-copy">Product terms for pilots or dedicated deployments are provided separately.</p>
-    </section>
+  <div class="page-shell legal-page">
+  <section class="section">
+    <h1>Terms</h1>
+    <p class="lead">By using this website, you agree to reasonable use.</p>
+    <p>Thoth Terminal source code is governed by the license published with its repository. Nothing on this site is investment, legal, or financial advice.</p>
+  </section>
   </div>
 </BaseLayout>

@@ -1,47 +1,20 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 export const prerender = true;
-
 const title = "Privacy — Agentic Systems Group";
 const description = "Our approach to privacy and data handling.";
 ---
-
 <BaseLayout {title} {description}>
-  <div class="page-shell">
-    <section class="hero-band redirect-shell">
-      <p class="eyebrow">Privacy</p>
-      <h1 class="display display--tight">Privacy</h1>
-      <p class="lede">
-        We minimize data collection and retain only what is necessary for operation and security.
-      </p>
-    </section>
-
-    <section class="section-block">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Data</p>
-          <h2 class="section-title">What we process.</h2>
-        </div>
-        <div>
-          <p class="section-copy">Operational logs for reliability and abuse prevention.</p>
-          <p class="section-copy">Support communications you explicitly send us.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Choices</p>
-          <h2 class="section-title">What you can request.</h2>
-        </div>
-        <div>
-          <p class="section-copy">Deletion of support communications you sent us.</p>
-          <p class="section-copy">Details about logs associated with your account, where applicable.</p>
-          <p class="section-copy">Contact <strong>hello@agenticsystems.group</strong> for privacy requests.</p>
-        </div>
-      </div>
-    </section>
+  <div class="page-shell legal-page">
+  <section class="section">
+    <h1>Privacy</h1>
+    <p class="lead">This is a static website with no accounts or forms. We do not add advertising or analytics scripts to the site.</p>
+    <h2>What we process</h2>
+    <ul>
+      <li>Our hosting provider processes network requests and may retain request metadata or use security cookies for reliability and abuse prevention.</li>
+    </ul>
+    <h2>No accounts, no newsletter</h2>
+    <p>There is currently no newsletter, subscription list, or user account system. If that changes, this page will be updated before any collection begins.</p>
+  </section>
   </div>
 </BaseLayout>

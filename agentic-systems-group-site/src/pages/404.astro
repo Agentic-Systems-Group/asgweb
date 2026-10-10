@@ -1,24 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 export const prerender = true;
-
 const title = "Not found — Agentic Systems Group";
 const description = "The page you requested does not exist.";
 ---
-
 <BaseLayout {title} {description}>
-  <div class="page-shell">
-    <section class="hero-band redirect-shell">
-      <p class="eyebrow">404</p>
-      <h1 class="display display--tight">The page you requested is not here.</h1>
-      <p class="redirect-copy">
-        The site now centers on ThothTerminal, EdMneme, and current research programs.
-      </p>
-      <div class="actions">
-        <a class="button" href="/">Return home</a>
-        <a class="ghost-button" href="/research">Open research</a>
-      </div>
-    </section>
-  </div>
+  <section class="section">
+    <h1>404</h1>
+    <p class="lead">The page you requested does not exist.</p>
+    <p><a href="/">Return home</a></p>
+  </section>
 </BaseLayout>

@@ -1,12 +1,17 @@
 // wrangler.jsonc
 {
   "name": "asgweb",
+  "account_id": "b47e2ea914d7e528c34f274568422eb7",
   "main": "src/worker.js",
   "compatibility_date": "2024-08-09",
 
-  "assets": { "directory": "agentic-systems-group-site/dist" },
+  "assets": {
+    "directory": "agentic-systems-group-site/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  },
 
-  // Deploy to workers.dev (no routes). Add routes later when the zone is in Cloudflare.
+  "routes": [{ "pattern": "agenticsystemsgroup.com", "custom_domain": true }],
 
   "observability": { "enabled": true }
 }

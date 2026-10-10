@@ -1,201 +1,76 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 export const prerender = true;
-
-const title = "Agentic Systems Group — research systems that stay legible under pressure";
-const description =
-  "Agentic Systems Group builds ThothTerminal, EdMneme, and long-horizon research programs around tutoring, institutional intelligence, and shared human-LLM systems.";
-
-const systems = [
-  {
-    name: "ThothTerminal",
-    label: "Local-first research terminal",
-    href: "/thothterminal",
-    summary:
-      "A serious always-on research terminal for heterogeneous sources, canonical storage, companies, earnings, transcripts, supply chains, and report-grade outputs.",
-    status: "Active system",
-    meta: "Web, desktop, MCP, Discord"
-  },
-  {
-    name: "EdMneme",
-    label: "Tutoring and control room",
-    href: "/edmneme",
-    summary:
-      "An interactive tutoring stack with a Control Room UI, inference routing, project memory, tool orchestration, and textbook ingestion through remote OCR.",
-    status: "Active system",
-    meta: "Tutoring, OCR, project memory"
-  },
-  {
-    name: "Research",
-    label: "Long-horizon programs",
-    href: "/research",
-    summary:
-      "Current research directions now emphasize report-centric intelligence systems and Zeta, a simulation-heavy tactics RPG exploring lawful magic and local LLM companions.",
-    status: "Ongoing programs",
-    meta: "Simulation, evaluation, systems"
-  }
-];
-
-const principles = [
-  {
-    title: "Inspectable over theatrical",
-    body:
-      "We prefer systems that can show their evidence, expose their state, and survive scrutiny from operators who care about what the model actually did."
-  },
-  {
-    title: "One durable core",
-    body:
-      "The strongest product decisions in the current stack all push toward a shared system of record instead of fragile sidecars, duplicate stores, or prompt-shaped state."
-  },
-  {
-    title: "Research feeds product",
-    body:
-      "The long-horizon programs are not decorative R&D. They shape how we think about agency, control, evaluation, and human-machine collaboration."
-  }
-];
-
-const researchTracks = [
-  {
-    title: "Report-centric intelligence",
-    body:
-      "Inside ThothTerminal, research reports are becoming the canonical export surface for companies, technologies, components, and themes."
-  },
-  {
-    title: "Institutional intelligence",
-    body:
-      "The longer roadmap pushes beyond dashboards toward continuously refreshed, evidence-dense views of companies, programs, products, and bottlenecks."
-  },
-  {
-    title: "Zeta",
-    body:
-      "A preproduction tactics RPG and simulation project built around lawful magic, local-model companions, and one world model for humans and agents."
-  }
-];
+const title = "Agentic Systems Group — software for research and learning";
+const description = "Independent software for research, learning, and agent evaluation. Home of Thoth Terminal, a local-first research workspace.";
+const sourceUrl = "https://github.com/HumanDotPy/ThothTerminal";
 ---
-
 <BaseLayout {title} {description}>
-  <div class="page-shell">
-    <section class="hero-band">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Agentic Systems Group</p>
-          <h1 class="display">Systems for research, learning, and long-horizon agency.</h1>
-          <p class="lede">
-            We build research systems for difficult domains: local-first terminals,
-            tutoring infrastructure, and experiments in human-LLM cooperation where
-            evidence, tools, and inspectable state matter more than presentation-layer magic.
-          </p>
-          <div class="actions">
-            <a class="button" href="/thothterminal">View ThothTerminal</a>
-            <a class="ghost-button" href="/edmneme">View EdMneme</a>
-            <a class="ghost-button" href="/research">See Research</a>
-          </div>
-        </div>
-
-        <aside class="hero-notes" aria-label="Current focus">
-          <ul class="summary-list">
-            <li>
-              <span class="meta-label">Current focus</span>
-              <strong>ThothTerminal and EdMneme</strong>
-              <p>The products with the most concrete surface area today.</p>
-            </li>
-            <li>
-              <span class="meta-label">Research cadence</span>
-              <strong>Applied, not ornamental</strong>
-              <p>Longer-horizon work is expected to shape the product surface, not sit beside it as mood.</p>
-            </li>
-            <li>
-              <span class="meta-label">Operating preference</span>
-              <strong>Local-first whenever possible</strong>
-              <p>We bias toward systems you can inspect, recover, and extend without blind dependencies.</p>
-            </li>
-          </ul>
-        </aside>
+  <section class="hero hero-home">
+    <div class="hero-signal" aria-hidden="true">
+      <span class="signal-axis"></span>
+      <span class="signal-line"></span>
+      <span class="signal-point point-a"></span>
+      <span class="signal-point point-b"></span>
+      <span class="signal-point point-c"></span>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow reveal reveal-1">Independent research &amp; systems engineering</p>
+      <h1 class="display reveal reveal-2">Agentic<br />Systems Group</h1>
+      <p class="hero-deck reveal reveal-3">Software for research and learning.</p>
+      <div class="cta reveal reveal-4">
+        <a class="button button-light" href="/thoth">Explore Thoth Terminal</a>
+        <a class="text-link text-link-light" href="/research">Explore the projects <span aria-hidden="true">↗</span></a>
       </div>
-    </section>
+    </div>
+    <div class="hero-index" aria-hidden="true">
+      <span>ASG / 001</span>
+      <span>RESEARCH · MEMORY · VERIFICATION</span>
+    </div>
+  </section>
 
-    <section class="section-block" aria-labelledby="current-systems">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Current systems</p>
-          <h2 class="section-title" id="current-systems">What is live now.</h2>
-        </div>
-        <p class="section-copy">
-          The company site should reflect the actual work in the repos, not a frozen
-          snapshot of an earlier pitch. These are the systems and programs that currently define the work.
-        </p>
+  <section class="feature feature-thoth">
+    <div class="section-index">
+      <span>01</span>
+      <span>Thoth Terminal</span>
+    </div>
+    <div class="feature-copy">
+      <p class="eyebrow">Thoth Terminal</p>
+      <h2>Your research should stay yours.</h2>
+      <p class="feature-lead">Collect sources, work with data, and develop a view. Thoth Terminal keeps documents, notes, theses, and reports together in a workspace you run yourself.</p>
+      <div class="feature-actions">
+        <a class="button" href="/thoth">See how it works</a>
+        <a class="text-link" href={sourceUrl} target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span></a>
       </div>
-
-      <div class="system-list">
-        {systems.map((system) => (
-          <article class="system-row">
-            <div>
-              <p class="kicker">{system.label}</p>
-            </div>
-            <div>
-              <h3 class="system-row__title">{system.name}</h3>
-              <p class="system-row__summary">{system.summary}</p>
-            </div>
-            <div class="system-row__meta">
-              <span class="stat-chip">{system.status}</span>
-              <a class="system-link" href={system.href}>Open</a>
-              <span class="meta-label">{system.meta}</span>
-            </div>
-          </article>
-        ))}
+    </div>
+    <div class="terminal-figure" aria-label="A diagram of Thoth Terminal's local-first research loop">
+      <div class="terminal-top"><span>THOTH / WORKFLOW</span><span>ILLUSTRATION</span></div>
+      <div class="terminal-body">
+        <p><span>01</span> Connect the sources you trust</p>
+        <p><span>02</span> Connect documents and data</p>
+        <p><span>03</span> Keep conclusions with their sources</p>
+        <p><span>04</span> Publish only what you choose</p>
       </div>
-    </section>
+      <div class="terminal-foot">SOURCES → EVIDENCE → A WORKING VIEW</div>
+    </div>
+  </section>
 
-    <section class="section-block" aria-labelledby="principles">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Approach</p>
-          <h2 class="section-title" id="principles">How we build.</h2>
-        </div>
-        <p class="section-copy">
-          We do not want the company site to promise one thing while the codebase reveals another.
-          The work is technical, structured, and opinionated, so the site now reflects that directly.
-        </p>
-      </div>
-
-      <div class="principle-grid">
-        {principles.map((principle) => (
-          <article class="principle">
-            <h3>{principle.title}</h3>
-            <p>{principle.body}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="section-block" aria-labelledby="research-directions">
-      <div class="section-head">
-        <div>
-          <p class="section-label">Research directions</p>
-          <h2 class="section-title" id="research-directions">Where the deeper work is going.</h2>
-        </div>
-        <p class="section-copy">
-          The product line is anchored in concrete systems, but the surrounding research matters:
-          how to structure long-form research memory, how to think about institutional intelligence,
-          and how humans and model agents can meaningfully share a bounded world.
-        </p>
-      </div>
-
-      <ul class="timeline-list">
-        {researchTracks.map((track) => (
-          <li>
-            <strong>{track.title}</strong>
-            <p>{track.body}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="section-block">
-      <blockquote class="pull-quote">
-        We are more interested in systems that can defend their outputs than in systems that merely look fluent.
-      </blockquote>
-    </section>
-  </div>
+  <section class="programs">
+    <div class="section-index">
+      <span>02</span>
+      <span>Systems &amp; programs</span>
+    </div>
+    <div class="program-list">
+      <a href="/edmneme" class="program-row">
+        <span class="program-number">A</span>
+        <span><strong>EdMneme</strong><small>Tutoring, OCR, and durable project memory</small></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="/research" class="program-row">
+        <span class="program-number">B</span>
+        <span><strong>Research</strong><small>Retrieval, verification, and robust agents</small></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
 </BaseLayout>
