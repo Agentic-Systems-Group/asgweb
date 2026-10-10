@@ -14,10 +14,11 @@ Use Node 24 and run `npm ci`, then `npm run dev`.
 
 The deployment repository nests this site in `agentic-systems-group-site/`.
 Its Worker serves the generated assets through the `ASSETS` binding. The
-GitHub workflow builds Astro and deploys with Wrangler. Set the repository's
-`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets for unattended deployment.
-The token needs access to the existing Worker in the account that owns the site.
-For local deployment, authenticate Wrangler to that account first.
+Cloudflare Workers Builds integration deploys pushes to `main` using the existing
+`asgweb` build connection. GitHub Actions separately validates the Astro build
+and dependency audit; it does not need Cloudflare credentials. Review deployment
+status in the Worker's Builds dashboard. For local deployment, authenticate
+Wrangler to the account that owns the site and deploy from the repository root.
 
 ## Editing
 
